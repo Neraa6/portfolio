@@ -27,8 +27,8 @@ export function Contact() {
   };
 
   const contacts = [
-    { icon: Mail, label: "Email", value: "hello@example.com", href: "mailto:hello@example.com" },
-    { icon: Phone, label: "WhatsApp", value: "+62 812 3456 7890", href: "https://wa.me/6281234567890" },
+    { icon: Mail, label: "Email", value: "yusufregan06@gmail.com", href: "mailto:yusufregan06@gmail.com" },
+    { icon: Phone, label: "WhatsApp", value: "+62 821-2595-4506", href: "https://wa.me/6282125954506" },
     { icon: Github, label: "GitHub", value: "@yourusername", href: "https://github.com" },
     { icon: Linkedin, label: "LinkedIn", value: "/in/yourprofile", href: "https://linkedin.com" },
   ];

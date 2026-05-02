@@ -87,7 +87,7 @@ export function Navbar() {
             {[
               { icon: Github, href: "https://github.com" },
               { icon: Linkedin, href: "https://linkedin.com" },
-              { icon: Instagram, href: "https://instagram.com" },
+              { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
             ].map(({ icon: Icon, href }) => (
               <motion.a
                 key={href}
@@ -144,7 +144,7 @@ export function Navbar() {
                 {[
                   { icon: Github, href: "https://github.com" },
                   { icon: Linkedin, href: "https://linkedin.com" },
-                  { icon: Instagram, href: "https://instagram.com" },
+                  { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
                 ].map(({ icon: Icon, href }) => (
                   <motion.a
                     key={href}

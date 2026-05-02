@@ -41,7 +41,7 @@ export function Hero() {
               className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
               Hi, I&apos;m{" "}
-              <span className="gradient-text">Your Name</span>
+              <span className="gradient-text">Yusuf Regan Manggala Ghalib</span>
             </motion.h1>
           </FadeIn>
 
@@ -80,7 +80,7 @@ export function Hero() {
               {[
                 { icon: Github, href: "https://github.com", label: "GitHub" },
                 { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+                { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}

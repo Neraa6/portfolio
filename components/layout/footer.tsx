@@ -18,8 +18,8 @@ export function Footer() {
             {[
               { icon: Github, href: "https://github.com", label: "GitHub" },
               { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-              { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+              { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
+              { icon: Mail, href: "mailto:yusufregan06@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
