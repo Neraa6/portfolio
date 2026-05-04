@@ -50,7 +50,7 @@ export function About() {
                 >
                   <div className="grid grid-cols-3 gap-4 text-center">
                     {[
-                      { label: "Projects", value: "15+" },
+                      { label: "Projects", value: "3" },
                       { label: "Experience", value: "2y" },
                       { label: "Technologies", value: "20+" },
                     ].map((stat) => (
@@ -87,7 +87,7 @@ export function About() {
               <Card className="border-l-4 border-l-accent">
                 <h4 className="font-semibold mb-2">Career Goal</h4>
                 <p className="text-text-secondary">
-                  To become a skilled Full Stack Developer with expertise in software engineering, 
+                  To become a skilled Data Analyst with expertise in software engineering, 
                   cloud systems, and IoT innovation.
                 </p>
               </Card>
