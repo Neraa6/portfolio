@@ -54,7 +54,7 @@ export function Hero() {
           <FadeIn delay={0.6}>
             <p className="text-lg text-text-secondary max-w-xl leading-relaxed">
               Passionate about building modern web applications, backend systems, 
-              networking infrastructure, and smart IoT solutions.
+              networking infrastructure, and exploring the world of IoT.
             </p>
           </FadeIn>
 
@@ -78,7 +78,7 @@ export function Hero() {
           <FadeIn delay={1}>
             <div className="flex items-center gap-4 pt-4">
               {[
-                { icon: Github, href: "https://github.com", label: "GitHub" },
+                { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
                 { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
                 { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (

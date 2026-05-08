@@ -85,7 +85,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <div className="hidden md:flex items-center gap-2">
             {[
-              { icon: Github, href: "https://github.com" },
+              { icon: Github, href: "https://github.com/Neraa6" },
               { icon: Linkedin, href: "https://linkedin.com" },
               { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
             ].map(({ icon: Icon, href }) => (
@@ -142,7 +142,7 @@ export function Navbar() {
               ))}
               <div className="flex gap-2 px-4 pt-4 border-t border-white/10">
                 {[
-                  { icon: Github, href: "https://github.com" },
+                  { icon: Github, href: "https://github.com/Neraa6" },
                   { icon: Linkedin, href: "https://linkedin.com" },
                   { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
                 ].map(({ icon: Icon, href }) => (

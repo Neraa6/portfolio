@@ -9,14 +9,14 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <p className="text-text-secondary text-sm text-center md:text-left">
-            © 2026 Your Name — Built with{" "}
+            © 2026 Yusuf Regan — Built with{" "}
             <span className="gradient-text font-medium">Next.js + Tailwind</span>
           </p>
 
           {/* Social Links */}
           <div className="flex items-center gap-3">
             {[
-              { icon: Github, href: "https://github.com", label: "GitHub" },
+              { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
               { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
               { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
               { icon: Mail, href: "mailto:yusufregan06@gmail.com", label: "Email" },

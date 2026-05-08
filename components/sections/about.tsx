@@ -48,11 +48,11 @@ export function About() {
                   viewport={{ once: true }}
                   className="absolute bottom-4 left-4 right-4 glass rounded-xl p-4"
                 >
-                  <div className="grid grid-cols-3 gap-4 text-center">
+                  <div className="grid grid-cols-2 gap-4 text-center">
                     {[
                       { label: "Projects", value: "3" },
                       { label: "Experience", value: "2y" },
-                      { label: "Technologies", value: "20+" },
+                     
                     ].map((stat) => (
                       <div key={stat.label}>
                         <div className="text-xl font-bold gradient-text">{stat.value}</div>
@@ -83,15 +83,7 @@ export function About() {
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.6}>
-              <Card className="border-l-4 border-l-accent">
-                <h4 className="font-semibold mb-2">Career Goal</h4>
-                <p className="text-text-secondary">
-                  To become a skilled Data Analyst with expertise in software engineering, 
-                  cloud systems, and IoT innovation.
-                </p>
-              </Card>
-            </FadeIn>
+           
 
             {/* Highlight Cards */}
             <StaggerContainer delay={0.8}>

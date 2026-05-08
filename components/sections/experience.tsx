@@ -5,6 +5,7 @@ import { GraduationCap, Award, Briefcase, Code } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { Camera } from 'lucide-react';
 
 const experiences = [
   {
@@ -15,15 +16,14 @@ const experiences = [
     period: "2023 - 2027",
     description: "Specialized in Information Technology with focus on programming, networking, IoT systems, and digital design.",
   },
-  {
-    type: "project",
-    icon: Code,
-    title: "Smart IoT Home System",
-    organization: "Personal Project",
-    period: "2025",
-    description: "End-to-end IoT solution with ESP32, MQTT, and React dashboard for home automation.",
-    achievements: ["Real-time monitoring", "Voice control integration"],
-  },
+{
+  type: "Organization",
+  icon: Camera, // Bisa diganti: Camera, Mic, Users, atau Palette
+  title: "Student Council Multimedia Division",
+  organization: "Student Council of SMK TI BAZMA",
+  period: "2024 - 2025",
+  description: "Responsible for managing the school’s social media, creating digital content, and supporting multimedia needs for events and communications.",
+},
 ];
 
 export function Experience() {
@@ -85,22 +85,7 @@ export function Experience() {
 
                         <p className="text-text-secondary mb-4">{exp.description}</p>
 
-                        {exp.achievements && (
-                          <ul className={cn(
-                            "space-y-2",
-                            isEven ? "md:text-right" : ""
-                          )}>
-                            {exp.achievements.map((achievement) => (
-                              <li key={achievement} className="text-sm text-text-secondary flex items-center gap-2">
-                                <span className={cn(
-                                  "w-1.5 h-1.5 rounded-full bg-accent",
-                                  isEven ? "md:order-2" : ""
-                                )} />
-                                {achievement}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
+                      
                       </motion.div>
                     </div>
 

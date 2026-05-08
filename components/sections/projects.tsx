@@ -13,7 +13,7 @@ import Image from "next/image";
 const projects = [
   {
     title: "Smart Door Lock",
-    description: "Smart security system where registered RFID cards unlock the door automatically using ESP32 microcontroller.",
+    description: "Smart security system where registered RFID cards unlock the door automatically using ESP32 and C++.",
     image: "/images/project-smart-lock.jpg",
     tech: ["ESP32", "RFID", "IoT", "C++"],
     features: ["RFID authentication", "Access logging", "IoT monitoring", "Real-time status"],
@@ -24,7 +24,7 @@ const projects = [
     title: "Iflix Clone",
     description: "Movie streaming web application with authentication, CRUD account system, and responsive UI.",
     image: "/images/project-iflix.jpg",
-    tech: ["HTML", "CSS", "JavaScript", "Express", "MySQL"],
+    tech: ["HTML & CSS", "JavaScript", "Express", "MySQL"],
     features: ["Login/Register", "Dashboard", "CRUD user", "Backend API"],
     github: "#",
     demo: "#",
@@ -35,6 +35,33 @@ const projects = [
     image: "/images/project-catering.jpg",
     tech: ["Next.js", "TypeScript", "Tailwind", "Supabase"],
     features: ["Online ordering", "Payment integration", "Dashboard analytics", "Inventory system"],
+    github: "#",
+    demo: "#",
+  },
+   {
+    title: "Pokemon API",
+    description: "RESTful API for fetching Pokemon data with filtering and search capabilities.",
+    image: "/images/project-pokemon.jpg",
+    tech: ["Node.js", "Express", "MongoDB"],
+    features: ["GET requests", "POST requests", "Filtering", "Search"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    title: "Whether App",
+    description: "Weather forecasting app that provides real-time weather data and forecasts for any location.",
+    image: "/images/project-whether.jpg",
+    tech: ["React", "OpenWeather API", "TailwindCSS"],
+    features: ["Current weather", "7-day forecast", "Location search", "Responsive design"],
+    github: "#",
+    demo: "#",
+  },
+  {
+    title: "Todo App",
+    description: "A simple and efficient todo application with a clean and intuitive user interface.",
+    image: "/images/project-todo.jpg",
+    tech: ["React", "TypeScript", "TailwindCSS"],
+    features: ["Add tasks", "Mark as complete", "Delete tasks", "Responsive design"],
     github: "#",
     demo: "#",
   },
@@ -54,7 +81,7 @@ export function Projects() {
         </FadeIn>
 
         <StaggerContainer>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 lg:grid-cols-3 gap-9">
             {projects.map((project) => (
               <motion.div key={project.title} variants={staggerItem}>
                 <TiltCard className="h-full">
