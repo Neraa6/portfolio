@@ -28,7 +28,7 @@ export function GradientOrb({ className, size = "lg" }: GradientOrbProps) {
         ease: "easeInOut",
       }}
       className={cn(
-        "absolute rounded-full blur-3xl opacity-30",
+        "absolute rounded-full blur-3xl opacity-15",
         "bg-gradient-radial from-accent/40 via-accent-secondary/20 to-transparent",
         sizes[size],
         className

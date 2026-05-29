@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground: #ffffff;
-  --background: #070B14;
-  --gradient-start: #3B82F6;
-  --gradient-end: #8B5CF6;
+  --foreground: #2E2A25;
+  --background: #F6F3EB;
+  --gradient-start: #869B7E;
+  --gradient-end: #7F2020;
 }
 
 * {
@@ -23,42 +23,41 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
   cursor: none; /* Hide default cursor for custom cursor */
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0F172A;
+  background: #FAF8F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--gradient-start), var(--gradient-end));
-  border-radius: 4px;
+  background: #C9CAAC;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(var(--gradient-end), var(--gradient-start));
+  background: var(--gradient-start);
 }
 
-/* Glassmorphism Utility */
+/* Glassmorphism/Editorial Card Utility */
 .glass {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: #FAF8F5;
+  border: 1px solid rgba(201, 202, 172, 0.45);
+  box-shadow: 0 4px 20px rgba(134, 155, 126, 0.04);
 }
 
 .glass-card {
-  @apply glass rounded-2xl transition-all duration-300;
+  @apply glass rounded-3xl transition-all duration-300;
 }
 
 .glass-card:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
-  transform: translateY(-4px);
+  border-color: rgba(134, 155, 126, 0.5);
+  box-shadow: 0 8px 30px rgba(134, 155, 126, 0.08);
+  transform: translateY(-2px);
 }
 
 /* Gradient Text */
@@ -72,8 +71,8 @@ body {
 /* Animated Background Grid */
 .grid-bg {
   background-image: 
-    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(201, 202, 172, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 202, 172, 0.12) 1px, transparent 1px);
   background-size: 50px 50px;
   position: relative;
 }
@@ -82,14 +81,14 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 0%, var(--background) 70%);
+  background: radial-gradient(circle at center, transparent 0%, var(--background) 85%);
   pointer-events: none;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(59, 130, 246, 0.3);
-  color: white;
+  background: rgba(134, 155, 126, 0.2);
+  color: #2E2A25;
 }
 
 /* Focus Visible */
@@ -100,20 +99,23 @@ body {
 
 /* Custom Cursor */
 .custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--gradient-start);
+  width: 6px;
+  height: 6px;
+  background: var(--gradient-start);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-  mix-blend-mode: difference;
 }
-.custom-cursor.active {
-  transform: scale(2.5);
-  background: rgba(59, 130, 246, 0.2);
-  border-color: transparent;
+.custom-cursor-ring {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(134, 155, 126, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.08s ease-out;
 }
 
 /* Smooth Reveal */

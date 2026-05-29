@@ -1,160 +1,173 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, Github, Linkedin, Send, Loader2 } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Send, Loader2, Mail, Copy, Check, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { FadeIn } from "@/components/animations/fade-in";
 
 export function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("yusufregan06@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
     setIsSubmitting(false);
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
-    
     setTimeout(() => setSubmitted(false), 3000);
   };
 
-  const contacts = [
-    { icon: Mail, label: "Email", value: "yusufregan06@gmail.com", href: "mailto:yusufregan06@gmail.com" },
-    { icon: Github, label: "GitHub", value: "@Neraa6", href: "https://github.com/Neraa6" },
-  ];
-
   return (
-    <section id="contact" className="relative py-24 px-4">
-      <div className="max-w-4xl mx-auto">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Get In <span className="gradient-text">Touch</span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto rounded-full" />
-          </div>
-        </FadeIn>
+    <div className="w-full space-y-12">
+      {/* Title */}
+      <div className="space-y-2">
+        <p className="text-xs font-mono tracking-widest text-accent uppercase font-bold">Connect</p>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-accent-secondary">Get In Touch</h2>
+      </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Contact Info */}
-          <FadeIn direction="left">
-            <Card className="h-full interactive">
-              <h3 className="text-xl font-bold mb-6">Let's Connect</h3>
-              
-              <div className="space-y-4">
-                {contacts.map((contact) => {
-                  const Icon = contact.icon;
-                  return (
-                    <motion.a
-                      key={contact.label}
-                      href={contact.href}
-                      target={contact.href.startsWith("http") ? "_blank" : undefined}
-                      className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors interactive"
-                      whileHover={{ x: 4 }}
-                    >
-                      <div className="p-3 rounded-lg bg-accent/20">
-                        <Icon className="w-5 h-5 text-accent" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-text-secondary">{contact.label}</p>
-                        <p className="font-medium">{contact.value}</p>
-                      </div>
-                    </motion.a>
-                  );
-                })}
-              </div>
+      {/* Grid Content */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-stretch">
+        {/* Left Side: Contact Information & Info Cards (5 cols) */}
+        <div className="md:col-span-5 flex flex-col justify-between space-y-6">
+          <div className="bg-secondary border border-khaki/30 p-6 rounded-3xl space-y-6 text-left shadow-sm">
+            <h3 className="text-lg font-bold text-accent-secondary tracking-tight">Let&apos;s Connect</h3>
+            <p className="text-xs text-text-secondary leading-relaxed font-sans">
+              I am open to collaborations, networking, junior full stack opportunities, or IoT designs. Feel free to shoot a message or copy my email address below!
+            </p>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 p-4 rounded-xl bg-secondary/50 border border-white/10">
-                <p className="text-sm text-text-secondary text-center">
-                  📍 Based in Indonesia • Open to remote opportunities worldwide
-                </p>
-              </div>
-            </Card>
-          </FadeIn>
-
-          {/* Contact Form */}
-          <FadeIn direction="right">
-            <Card className="interactive">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-white/10 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
-                    placeholder="Your name"
-                  />
+            <div className="space-y-3 pt-2">
+              {/* Email Copier Card */}
+              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-[#F6F3EB] border border-khaki/30">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-accent/10 border border-accent/20">
+                    <Mail className="w-4 h-4 text-accent" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[10px] font-mono text-text-secondary leading-none">Email Address</p>
+                    <p className="text-xs font-mono font-bold text-text-primary mt-1">yusufregan06@gmail.com</p>
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-white/10 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-secondary border border-white/10 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors resize-none"
-                    placeholder="Your message..."
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full interactive"
-                  disabled={isSubmitting}
+                <button
+                  onClick={handleCopyEmail}
+                  type="button"
+                  className="p-2 rounded-xl bg-secondary border border-khaki/20 hover:border-accent/40 text-text-secondary hover:text-accent-secondary transition-all interactive"
+                  aria-label="Copy Email"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Sending...
-                    </>
-                  ) : submitted ? (
-                    "✓ Message Sent!"
+                  {copied ? (
+                    <Check className="w-3.5 h-3.5 text-accent" />
                   ) : (
-                    <>
-                      Send Message
-                      <Send className="w-4 h-4" />
-                    </>
+                    <Copy className="w-3.5 h-3.5" />
                   )}
-                </Button>
-              </form>
-            </Card>
-          </FadeIn>
+                </button>
+              </div>
+
+              {/* GitHub Link Card */}
+              <a
+                href="https://github.com/Neraa6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3.5 rounded-2xl bg-[#F6F3EB] border border-khaki/30 hover:border-accent/30 transition-colors"
+              >
+                <div className="p-2 rounded-xl bg-accent/10 border border-accent/20">
+                  <Github className="w-4 h-4 text-accent" />
+                </div>
+                <div className="text-left">
+                  <p className="text-[10px] font-mono text-text-secondary leading-none">GitHub Profile</p>
+                  <p className="text-xs font-mono font-bold text-text-primary mt-1">@Neraa6</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          {/* Map / Location disclaimer */}
+          <div className="bg-secondary border border-khaki/30 p-5 rounded-3xl text-center text-xs font-mono text-text-secondary shadow-sm">
+            📍 Based in Indonesia • Open to remote worldwide
+          </div>
+        </div>
+
+        {/* Right Side: Message Form (7 cols) */}
+        <div className="md:col-span-7 bg-secondary border border-khaki/30 p-8 rounded-3xl shadow-sm text-left">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <label htmlFor="name" className="block text-[10px] font-mono text-text-secondary">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors text-text-primary placeholder-text-secondary/40 font-sans"
+                  placeholder="Yusuf Regan"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label htmlFor="email" className="block text-[10px] font-mono text-text-secondary">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors text-text-primary placeholder-text-secondary/40 font-sans"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <label htmlFor="message" className="block text-[10px] font-mono text-text-secondary">
+                Message Content
+              </label>
+              <textarea
+                id="message"
+                required
+                rows={4}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors resize-none text-text-primary placeholder-text-secondary/40 font-sans"
+                placeholder="Hi! Let's collaborate..."
+              />
+            </div>
+
+            <Button
+              type="submit"
+              className="w-full h-10 text-xs font-mono bg-accent text-white border border-accent hover:bg-accent/90 shadow-none interactive mt-2"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  Sending...
+                </>
+              ) : submitted ? (
+                "✓ Message Sent!"
+              ) : (
+                <>
+                  Send Message
+                  <Send className="w-3.5 h-3.5" />
+                </>
+              )}
+            </Button>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

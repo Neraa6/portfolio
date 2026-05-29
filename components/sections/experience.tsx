@@ -1,103 +1,75 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { GraduationCap, Award, Briefcase, Code } from "lucide-react";
-import { FadeIn } from "@/components/animations/fade-in";
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-import { Camera } from 'lucide-react';
+import { GraduationCap, Camera, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    type: "education",
+    type: "Education",
     icon: GraduationCap,
     title: "IT Student - Vocational High School",
-    organization: "SMK Technology",
+    organization: "SMK TI BAZMA",
     period: "2023 - 2027",
-    description: "Specialized in Information Technology with focus on programming, networking, IoT systems, and digital design.",
+    description: "Specializing in Full Stack Software Development, Database Management, and Networking administration guidelines.",
   },
-{
-  type: "Organization",
-  icon: Camera, // Bisa diganti: Camera, Mic, Users, atau Palette
-  title: "Student Council Multimedia Division",
-  organization: "Student Council of SMK TI BAZMA",
-  period: "2024 - 2025",
-  description: "Responsible for managing the school’s social media, creating digital content, and supporting multimedia needs for events and communications.",
-},
+  {
+    type: "Activity",
+    icon: Camera,
+    title: "Student Council Multimedia Division Lead",
+    organization: "OSIS SMK TI BAZMA",
+    period: "2024 - 2025",
+    description: "Managed school documentation, brand assets, social media layouts, and multimedia coverages for local campaigns.",
+  },
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="relative py-24 px-4 bg-secondary/30">
-      <div className="max-w-4xl mx-auto">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              My <span className="gradient-text">Journey</span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto rounded-full" />
-          </div>
-        </FadeIn>
-
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent via-accent-secondary to-transparent" />
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => {
-              const Icon = exp.icon;
-              const isEven = index % 2 === 0;
-
-              return (
-                <FadeIn key={exp.title} delay={index * 0.1}>
-                  <motion.div
-                    className={cn(
-                      "relative flex gap-8",
-                      isEven ? "md:flex-row" : "md:flex-row-reverse"
-                    )}
-                  >
-                    {/* Timeline Dot */}
-                    <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-accent to-accent-secondary border-4 border-background z-10" />
-
-                    {/* Content Card */}
-                    <div className={cn(
-                      "flex-1 ml-12 md:ml-0",
-                      isEven ? "md:pr-12 md:text-right" : "md:pl-12"
-                    )}>
-                      <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        className="glass-card p-6 interactive"
-                      >
-                        <div className={cn(
-                          "flex items-start gap-4 mb-4",
-                          isEven ? "md:flex-row-reverse" : ""
-                        )}>
-                          <div className="p-3 rounded-xl bg-accent/20 flex-shrink-0">
-                            <Icon className="w-5 h-5 text-accent" />
-                          </div>
-                          <div>
-                            <Badge variant="accent" className="mb-2">{exp.type}</Badge>
-                            <h3 className="text-xl font-bold">{exp.title}</h3>
-                            <p className="text-accent-secondary font-medium">{exp.organization}</p>
-                            <p className="text-sm text-text-secondary">{exp.period}</p>
-                          </div>
-                        </div>
-
-                        <p className="text-text-secondary mb-4">{exp.description}</p>
-
-                      
-                      </motion.div>
-                    </div>
-
-                    {/* Spacer for alternating layout */}
-                    <div className="hidden md:block flex-1" />
-                  </motion.div>
-                </FadeIn>
-              );
-            })}
-          </div>
-        </div>
+    <div className="w-full space-y-12">
+      {/* Title */}
+      <div className="space-y-2">
+        <p className="text-xs font-mono tracking-widest text-accent uppercase font-bold">Journey</p>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-accent-secondary">Education & Activities</h2>
       </div>
-    </section>
+
+      {/* Spacious Vertical Stepper */}
+      <div className="max-w-3xl mx-auto space-y-8 relative pl-8 before:absolute before:left-3 before:top-2 before:bottom-2 before:w-px before:bg-khaki/40">
+        {experiences.map((exp, idx) => {
+          const Icon = exp.icon;
+          return (
+            <div key={idx} className="relative group/step text-left space-y-2">
+              {/* Stepper Dot */}
+              <div className="absolute -left-8 top-1 w-6 h-6 rounded-full border-2 border-background bg-secondary group-hover/step:bg-accent group-hover/step:border-accent/40 transition-all flex items-center justify-center shadow-sm">
+                <Icon className="w-3.5 h-3.5 text-accent-secondary group-hover/step:text-white transition-colors" />
+              </div>
+
+              {/* Step Content */}
+              <div className="bg-secondary border border-khaki/30 p-6 rounded-3xl space-y-3 hover:border-accent/30 transition-colors shadow-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="px-2.5 py-1 rounded-full bg-[#F6F3EB] border border-khaki/30 text-[9px] font-mono text-accent">
+                    {exp.type}
+                  </span>
+                  <span className="text-[10px] font-mono text-text-secondary flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-accent" />
+                    {exp.period}
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-accent-secondary tracking-tight">
+                    {exp.title}
+                  </h3>
+                  <p className="text-xs font-medium text-text-primary font-mono">
+                    {exp.organization}
+                  </p>
+                </div>
+
+                <p className="text-sm text-text-secondary leading-relaxed pt-1 border-t border-khaki/10">
+                  {exp.description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }

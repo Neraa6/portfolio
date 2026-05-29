@@ -10,19 +10,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#070B14",
-        secondary: "#0F172A",
+        background: "#F6F3EB",
+        secondary: "#FAF8F5",
         accent: {
-          DEFAULT: "#3B82F6",
-          secondary: "#8B5CF6",
+          DEFAULT: "#869B7E",
+          secondary: "#7F2020",
         },
         text: {
-          primary: "#FFFFFF",
-          secondary: "#94A3B8",
+          primary: "#2E2A25",
+          secondary: "#706A61",
         },
+        khaki: "#C9CAAC",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       borderRadius: {
         "2xl": "1rem",

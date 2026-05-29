@@ -23,10 +23,10 @@ export function Button({
   ...props
 }: ButtonProps) {
   const variants = {
-    primary: "bg-gradient-to-r from-accent to-accent-secondary hover:opacity-90 text-white shadow-glow",
-    secondary: "bg-secondary hover:bg-secondary/80 text-white border border-white/10",
-    outline: "border-2 border-accent hover:bg-accent/10 text-accent",
-    ghost: "hover:bg-white/5 text-text-secondary hover:text-white",
+    primary: "bg-accent hover:opacity-90 text-[#FAF8F5] shadow-none",
+    secondary: "bg-[#FAF8F5] hover:bg-khaki/10 text-text-primary border border-khaki/40",
+    outline: "border border-accent-secondary hover:bg-accent-secondary/5 text-accent-secondary",
+    ghost: "hover:bg-khaki/10 text-text-secondary hover:text-text-primary",
   };
 
   const sizes = {

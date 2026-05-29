@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
@@ -8,9 +8,16 @@ import { CustomCursor } from "@/components/effects/custom-cursor";
 import { getSEOTags } from "./seo";
 import "./globals.css";
 
-const inter = Inter({ 
+const sans = Plus_Jakarta_Sans({ 
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const mono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -20,7 +27,7 @@ export const metadata: Metadata = getSEOTags({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#070B14",
+  themeColor: "#F6F3EB",
   width: "device-width",
   initialScale: 1,
 };
@@ -31,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${sans.variable} ${mono.variable} scroll-smooth`}>
       <body className="antialiased bg-background text-text-primary min-h-screen">
         <ScrollProgress />
         <CustomCursor />

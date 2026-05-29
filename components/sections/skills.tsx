@@ -1,87 +1,91 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { StaggerContainer, staggerItem } from "@/components/animations/stagger-container";
-import { FadeIn } from "@/components/animations/fade-in";
+import { Terminal, Cpu, Database, Network, Shield, Settings } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Backend",
+    id: "backend",
+    title: "Backend Development",
+    icon: Cpu,
     items: ["Laravel (PHP)", "Express.js", "Node.js", "REST API"],
   },
   {
-    title: "Frontend",
+    id: "frontend",
+    title: "Frontend Engineering",
+    icon: Terminal,
     items: ["Next.js", "TypeScript", "TailwindCSS", "React", "JavaScript", "HTML/CSS"],
   },
   {
-    title: "Database",
+    id: "database",
+    title: "Database Management",
+    icon: Database,
     items: ["MySQL", "Supabase", "PostgreSQL"],
   },
   {
-    title: "Networking",
+    id: "networking",
+    title: "Networking & Infra",
+    icon: Network,
     items: ["Mikrotik", "Linux Server", "Basic Networking", "Cisco"],
   },
   {
+    id: "security",
     title: "Cyber Security",
+    icon: Shield,
     items: ["CTF (Basic)", "Security Fundamentals"],
   },
   {
-    title: "Tools",
+    id: "tools",
+    title: "Tools & OS",
+    icon: Settings,
     items: ["Git", "GitHub", "Postman", "VS Code", "Figma", "Linux (Ubuntu)"],
   },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="relative py-24 px-4 bg-secondary/30">
-      <div className="max-w-5xl mx-auto">
-        <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              My <span className="gradient-text">Skills</span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-accent to-accent-secondary mx-auto rounded-full" />
-          </div>
-        </FadeIn>
+    <div className="w-full space-y-12">
+      {/* Title */}
+      <div className="space-y-2">
+        <p className="text-xs font-mono tracking-widest text-accent uppercase font-bold">Expertise</p>
+        <h2 className="text-3xl md:text-5xl font-extrabold text-accent-secondary">Skills & Technologies</h2>
+      </div>
 
-        <StaggerContainer>
-          <div className="space-y-6">
-            {skillCategories.map((category) => (
-              <motion.div
-                key={category.title}
-                variants={staggerItem}
-                className="flex flex-col sm:flex-row sm:items-start gap-3"
-              >
-                {/* Category Label */}
-                <div className="sm:w-40 flex-shrink-0">
-                  <span className="text-lg font-bold text-white sm:text-right block">
+      {/* Grid of Categories (shows everything at once, spacious & readable) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skillCategories.map((category) => {
+          const Icon = category.icon;
+          return (
+            <div
+              key={category.id}
+              className="bg-secondary border border-khaki/30 p-6 rounded-3xl flex flex-col justify-between hover:border-accent/40 transition-colors shadow-sm text-left"
+            >
+              <div className="space-y-4">
+                {/* Header */}
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 rounded-xl bg-accent/10 border border-accent/20">
+                    <Icon className="w-4 h-4 text-accent" />
+                  </div>
+                  <h3 className="text-sm font-bold text-accent-secondary font-mono">
                     {category.title}
-                  </span>
+                  </h3>
                 </div>
 
-                {/* Skill Tags */}
-                <div className="flex flex-wrap gap-2">
+                {/* Tag Cluster */}
+                <div className="flex flex-wrap gap-1.5 pt-2">
                   {category.items.map((skill) => (
-                    <motion.span
+                    <span
                       key={skill}
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 rounded-full bg-secondary border border-white/10 
-                                 text-text-primary text-sm font-medium cursor-default 
-                                 hover:border-accent/50 hover:bg-accent/10 
-                                 hover:text-accent transition-all duration-200 
-                                 hover:shadow-[0_0_15px_rgba(59,130,246,0.15)]
-                                 interactive"
+                      className="px-3 py-1.5 rounded-xl bg-[#F6F3EB] border border-khaki/30 text-[10px] font-mono text-text-primary hover:border-accent/50 transition-colors cursor-default"
                     >
                       {skill}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </StaggerContainer>
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }
