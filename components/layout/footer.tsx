@@ -17,7 +17,6 @@ export function Footer() {
           <div className="flex items-center gap-3">
             {[
               { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
               { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
               { icon: Mail, href: "mailto:yusufregan06@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (

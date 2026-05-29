@@ -53,25 +53,28 @@ export function Hero() {
 
           <FadeIn delay={0.6}>
             <p className="text-lg text-text-secondary max-w-xl leading-relaxed">
-              Passionate about building modern web applications, backend systems, 
+              Passionate about building modern web applications, backend systems,
               networking infrastructure, and exploring the world of IoT.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.8}>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="interactive">
-                View Projects
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button variant="secondary" size="lg" className="interactive">
-                <Download className="w-4 h-4" />
-                Download CV
-              </Button>
-              <Button variant="outline" size="lg" className="interactive">
-                <Mail className="w-4 h-4" />
-                Contact Me
-              </Button>
+              <a href="#projects" className="interactive">
+                <Button size="lg">
+                  View Projects <ArrowRight className="w-4 h-4" />
+                </Button>
+              </a>
+              <a href="/CV.pdf" download className="interactive">
+                <Button variant="secondary" size="lg">
+                  <Download className="w-4 h-4" /> Download CV
+                </Button>
+              </a>
+              <a href="#contact" className="interactive">
+                <Button variant="outline" size="lg">
+                  <Mail className="w-4 h-4" /> Contact Me
+                </Button>
+              </a>
             </div>
           </FadeIn>
 
@@ -79,7 +82,6 @@ export function Hero() {
             <div className="flex items-center gap-4 pt-4">
               {[
                 { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
                 { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
@@ -109,7 +111,7 @@ export function Hero() {
             >
               {/* Glowing Border */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent-secondary rounded-3xl blur opacity-30" />
-              
+
               <div className="relative bg-secondary/50 rounded-3xl overflow-hidden">
                 <div className="aspect-square relative">
                   <Image
@@ -122,7 +124,7 @@ export function Hero() {
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 </div>
-                
+
                 {/* Floating Badge */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}

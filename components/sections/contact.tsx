@@ -28,9 +28,7 @@ export function Contact() {
 
   const contacts = [
     { icon: Mail, label: "Email", value: "yusufregan06@gmail.com", href: "mailto:yusufregan06@gmail.com" },
-    { icon: Phone, label: "WhatsApp", value: "+62 821-2595-4506", href: "https://wa.me/6282125954506" },
     { icon: Github, label: "GitHub", value: "@Neraa6", href: "https://github.com/Neraa6" },
-    { icon: Linkedin, label: "LinkedIn", value: "/in/yourprofile", href: "https://linkedin.com" },
   ];
 
   return (
