@@ -15,7 +15,7 @@ const projects = [
   },
   {
     id: "ecommerce",
-    title: "Mini e-Commerce",
+    title: "Mini e-commerce",
     description: "A compact e-commerce platform with product management, and a clean UI built using tailwindcss",
     tech: ["React", "TailwindCSS",],
     features: ["User Authentication", "Product Management",],

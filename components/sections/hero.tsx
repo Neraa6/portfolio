@@ -86,7 +86,7 @@ export function Hero() {
               View Work <ArrowRight className="w-4 h-4" />
             </Button>
           </a>
-          <a href="/CV.pdf" download>
+          <a href="/CV-Regan.pdf" download>
             <Button variant="secondary" size="md" className="bg-secondary text-text-primary border border-khaki/40 hover:bg-khaki/10 shadow-none font-mono interactive">
               <Download className="w-4 h-4" /> Download CV
             </Button>
