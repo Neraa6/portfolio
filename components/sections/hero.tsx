@@ -13,7 +13,7 @@ export function Hero() {
     "IT Student",
     "Full Stack Developer",
     "IoT Enthusiast",
-    "Problem Solver",
+    "Tech Explorer",
   ];
 
   useEffect(() => {

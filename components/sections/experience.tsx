@@ -8,7 +8,7 @@ const experiences = [
     icon: GraduationCap,
     title: "IT Student - Vocational High School",
     organization: "SMK TI BAZMA",
-    period: "2023 - 2027",
+    period: "2023 - Present",
     description: "Specializing in Full Stack Software Development, Database Management, and Networking administration guidelines.",
   },
   {

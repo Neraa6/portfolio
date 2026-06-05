@@ -23,7 +23,7 @@ const skillCategories = [
   },
   {
     id: "networking",
-    title: "Networking & Infra",
+    title: "Networking",
     icon: Network,
     items: ["Mikrotik", "Linux Server", "Basic Networking", "Cisco"],
   },
