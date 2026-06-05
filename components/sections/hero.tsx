@@ -49,7 +49,7 @@ export function Hero() {
         <div className="flex items-center gap-3 bg-secondary border border-khaki/30 px-3.5 py-1.5 rounded-full">
           <span className="flex items-center gap-1.5 text-text-primary">
             <MapPin className="w-3.5 h-3.5 text-accent" />
-            Jakarta, ID
+            Bogor, ID
           </span>
           <span className="w-px h-3 bg-khaki/30" />
           <span className="flex items-center gap-1.5 text-text-primary">

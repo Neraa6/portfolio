@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
           <p className="text-text-secondary text-xs text-center md:text-left font-mono">
-            © {new Date().getFullYear()} Yusuf Regan — Minimalist Compact Dashboard
+            © {new Date().getFullYear()} Yusuf Regan Manggala Ghalib. All rights reserved.
           </p>
 
           {/* Social Links */}
@@ -17,7 +17,6 @@ export function Footer() {
             {[
               { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
               { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
-              { icon: Mail, href: "mailto:yusufregan06@gmail.com", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function About() {
   const stats = [
-    { label: "Completed Projects", value: "6+", icon: Code2 },
+    { label: "Completed Projects", value: "4+", icon: Code2 },
     { label: "Years Learning/Exp", value: "2y+", icon: Award },
   ];
 
@@ -29,7 +29,6 @@ export function About() {
                 alt="Yusuf Regan Manggala Ghalib"
                 fill
                 sizes="(max-w-768px) 100vw, 30vw"
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
               />
             </div>
             {/* Absolute overlay badge */}

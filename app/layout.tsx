@@ -22,7 +22,7 @@ const mono = Space_Mono({
 });
 
 export const metadata: Metadata = getSEOTags({
-  title: "Your Name | Full Stack Developer Portfolio",
+  title: "Yusuf Regan | Full Stack Developer Portfolio",
   description: "IT Student & Junior Full Stack Developer specializing in modern web applications, backend systems, and IoT solutions.",
 });
 

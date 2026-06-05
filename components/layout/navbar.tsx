@@ -55,7 +55,7 @@ export function Navbar() {
           whileHover={{ scale: 1.02 }}
         >
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span>RE.GAN</span>
+          <span>portfolio</span>
         </motion.a>
 
         {/* Center Desktop Links */}

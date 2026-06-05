@@ -12,17 +12,6 @@ const projects = [
     features: ["RFID authentication", "Real-time logging", "Automatic locking"],
     github: "https://github.com/Neraa6",
     demo: "#",
-    filename: "SmartLock.cpp",
-    code: `// ESP32 RFID Door Lock
-#include <SPI.h>
-#include <MFRC522.h>
-
-void setup() {
-  SPI.begin();
-  rfid.PCD_Init();
-  lockServo.attach(13);
-  lockServo.write(0); // Locked
-}`
   },
   {
     id: "iflix",
@@ -32,15 +21,6 @@ void setup() {
     features: ["Secure JWT Auth", "Admin Dashboard", "RESTful Movie API"],
     github: "https://github.com/Neraa6",
     demo: "#",
-    filename: "movieRouter.js",
-    code: `// Movie Stream API Route
-router.get('/stream/:id', auth, async (req, res) => {
-  const movie = await db.query(
-    'SELECT url FROM movies WHERE id = ?', 
-    [req.params.id]
-  );
-  res.json({ url: movie[0].url });
-});`
   },
   {
     id: "catering",
@@ -70,14 +50,6 @@ export async function createOrder(cart: CartItem[], uid: string) {
     features: ["Fuzzy queries", "Advanced filtering", "Speed caching"],
     github: "https://github.com/Neraa6",
     demo: "#",
-    filename: "server.js",
-    code: `// Aggregated Search Route
-app.get('/api/pokemon', async (req, res) => {
-  const { type, search } = req.query;
-  let query = {};
-  if (search) query.name = { $regex: search, $options: 'i' };
-  res.json(await Pokemon.find(query).limit(12));
-});`
   },
 ];
 
@@ -129,23 +101,7 @@ export function Projects() {
             </div>
 
             {/* Middle Side: Simulated Code Preview */}
-            <div className="flex flex-col rounded-2xl border border-khaki/20 bg-[#FAF8F5] overflow-hidden relative min-h-[140px] group-hover:border-accent/20 transition-colors">
-              <div className="flex items-center justify-between px-3 py-2 bg-[#F6F3EB] border-b border-khaki/10">
-                <div className="flex items-center gap-1.5">
-                  <Circle className="w-2 h-2 fill-khaki/60 stroke-none" />
-                  <Circle className="w-2 h-2 fill-khaki/60 stroke-none" />
-                  <Circle className="w-2 h-2 fill-khaki/60 stroke-none" />
-                </div>
-                <div className="flex items-center gap-1 text-[9px] font-mono text-text-secondary">
-                  <Code2 className="w-3 h-3 text-accent" />
-                  <span>{proj.filename}</span>
-                </div>
-                <div className="w-6" />
-              </div>
-              <div className="p-3 font-mono text-[9px] leading-relaxed overflow-x-auto text-left select-none flex-grow text-accent-secondary/80">
-                <pre><code>{proj.code}</code></pre>
-              </div>
-            </div>
+                
 
             {/* Bottom Side: Actions */}
             <div className="flex gap-3 pt-2">
