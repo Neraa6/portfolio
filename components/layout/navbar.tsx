@@ -82,7 +82,7 @@ export function Navbar() {
           <div className="hidden sm:flex items-center gap-1.5">
             {[
               { icon: Github, href: "https://github.com/Neraa6" },
-              { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
+              { icon: Instagram, href: "https://www.instagram.com/yrgnn/" },
             ].map(({ icon: Icon, href }) => (
               <motion.a
                 key={href}
@@ -137,7 +137,7 @@ export function Navbar() {
             <div className="flex gap-2 pt-3 border-t border-khaki/20">
               {[
                 { icon: Github, href: "https://github.com/Neraa6" },
-                { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
+                { icon: Instagram, href: "https://www.instagram.com/yrgnn/" },
               ].map(({ icon: Icon, href }) => (
                 <motion.a
                   key={href}
