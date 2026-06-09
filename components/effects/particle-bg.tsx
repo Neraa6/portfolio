@@ -47,7 +47,7 @@ export function ParticleBg() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(134, 155, 126, ${p.opacity * 0.4})`; // more subtle
+        ctx.fillStyle = `rgba(79, 98, 74, ${p.opacity * 0.4})`; // more subtle
         ctx.fill();
       });
 
@@ -62,7 +62,7 @@ export function ParticleBg() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(134, 155, 126, ${0.05 * (1 - distance / 150)})`; // more subtle
+            ctx.strokeStyle = `rgba(79, 98, 74, ${0.05 * (1 - distance / 150)})`; // more subtle
             ctx.stroke();
           }
         });

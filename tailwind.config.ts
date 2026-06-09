@@ -13,12 +13,12 @@ const config: Config = {
         background: "#F6F3EB",
         secondary: "#FAF8F5",
         accent: {
-          DEFAULT: "#869B7E",
+          DEFAULT: "#4F624A",
           secondary: "#7F2020",
         },
         text: {
           primary: "#2E2A25",
-          secondary: "#706A61",
+          secondary: "#5A554D",
         },
         khaki: "#C9CAAC",
       },
@@ -35,9 +35,9 @@ const config: Config = {
         "glass": "linear-gradient(145deg, rgba(15,23,42,0.6), rgba(7,11,20,0.8))",
       },
       boxShadow: {
-        "glow": "0 0 20px rgba(59, 130, 246, 0.3)",
-        "glow-purple": "0 0 20px rgba(139, 92, 246, 0.3)",
-        "glass": "0 8px 32px rgba(0, 0, 0, 0.3)",
+        "glow": "0 0 20px rgba(79, 98, 74, 0.2)",
+        "glow-purple": "0 0 20px rgba(127, 32, 32, 0.2)",
+        "glass": "0 8px 32px rgba(0, 0, 0, 0.1)",
       },
       animation: {
         "float": "float 6s ease-in-out infinite",

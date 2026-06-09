@@ -77,7 +77,7 @@ export function Projects() {
                 </h3>
                 {/* Tech Badges */}
                 <div className="flex flex-wrap gap-1">
-                  {proj.tech.slice(0, 2).map((t) => (
+                  {proj.tech.map((t) => (
                     <span key={t} className="px-2 py-0.5 rounded-md bg-[#F6F3EB] border border-khaki/30 text-[9px] font-mono text-accent">
                       {t}
                     </span>

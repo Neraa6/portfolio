@@ -81,8 +81,8 @@ export function CustomCursor() {
         }}
         animate={{
           scale: isHovering ? 1.8 : 1,
-          borderColor: isHovering ? "var(--gradient-start)" : "rgba(134, 155, 126, 0.4)",
-          backgroundColor: isHovering ? "rgba(134, 155, 126, 0.08)" : "rgba(134, 155, 126, 0)",
+          borderColor: isHovering ? "var(--gradient-start)" : "rgba(79, 98, 74, 0.4)",
+          backgroundColor: isHovering ? "rgba(79, 98, 74, 0.08)" : "rgba(79, 98, 74, 0)",
         }}
         transition={{ type: "spring", stiffness: 350, damping: 25 }}
       />

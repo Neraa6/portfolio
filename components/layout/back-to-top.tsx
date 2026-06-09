@@ -21,6 +21,7 @@ export function BackToTop() {
             size="sm"
             className="rounded-full w-12 h-12 p-0 shadow-glow"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Back to top"
           >
             <ArrowUp className="w-5 h-5" />
           </Button>

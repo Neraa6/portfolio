@@ -5,7 +5,7 @@
 :root {
   --foreground: #2E2A25;
   --background: #F6F3EB;
-  --gradient-start: #869B7E;
+  --gradient-start: #4F624A;
   --gradient-end: #7F2020;
 }
 
@@ -47,7 +47,7 @@ body {
 .glass {
   background: #FAF8F5;
   border: 1px solid rgba(201, 202, 172, 0.45);
-  box-shadow: 0 4px 20px rgba(134, 155, 126, 0.04);
+  box-shadow: 0 4px 20px rgba(79, 98, 74, 0.04);
 }
 
 .glass-card {
@@ -55,8 +55,8 @@ body {
 }
 
 .glass-card:hover {
-  border-color: rgba(134, 155, 126, 0.5);
-  box-shadow: 0 8px 30px rgba(134, 155, 126, 0.08);
+  border-color: rgba(79, 98, 74, 0.5);
+  box-shadow: 0 8px 30px rgba(79, 98, 74, 0.08);
   transform: translateY(-2px);
 }
 
@@ -87,7 +87,7 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(134, 155, 126, 0.2);
+  background: rgba(79, 98, 74, 0.2);
   color: #2E2A25;
 }
 
@@ -110,7 +110,7 @@ body {
 .custom-cursor-ring {
   width: 24px;
   height: 24px;
-  border: 1px solid rgba(134, 155, 126, 0.4);
+  border: 1px solid rgba(79, 98, 74, 0.4);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;

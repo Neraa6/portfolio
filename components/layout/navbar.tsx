@@ -81,9 +81,9 @@ export function Navbar() {
           {/* Socials (Desktop) */}
           <div className="hidden sm:flex items-center gap-1.5">
             {[
-              { icon: Github, href: "https://github.com/Neraa6" },
-              { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
-            ].map(({ icon: Icon, href }) => (
+              { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
+              { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
+            ].map(({ icon: Icon, href, label }) => (
               <motion.a
                 key={href}
                 href={href}
@@ -92,6 +92,7 @@ export function Navbar() {
                 className="p-2 rounded-xl bg-[#F6F3EB] border border-khaki/30 text-text-secondary hover:text-accent-secondary hover:border-khaki transition-all interactive"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label={label}
               >
                 <Icon className="w-3.5 h-3.5" />
               </motion.a>
@@ -103,6 +104,8 @@ export function Navbar() {
             className="md:hidden p-2 rounded-xl bg-[#F6F3EB] border border-khaki/30 text-text-secondary hover:text-accent-secondary transition-colors interactive"
             onClick={() => setIsOpen(!isOpen)}
             type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -136,9 +139,9 @@ export function Navbar() {
             ))}
             <div className="flex gap-2 pt-3 border-t border-khaki/20">
               {[
-                { icon: Github, href: "https://github.com/Neraa6" },
-                { icon: Instagram, href: "https://www.instagram.com/y.regan6/" },
-              ].map(({ icon: Icon, href }) => (
+                { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
+                { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
+              ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={href}
                   href={href}
@@ -146,6 +149,7 @@ export function Navbar() {
                   rel="noopener noreferrer"
                   className="p-3 rounded-2xl bg-[#F6F3EB] border border-khaki/30 text-text-secondary hover:text-accent-secondary transition-all flex-1 flex justify-center"
                   whileTap={{ scale: 0.95 }}
+                  aria-label={label}
                 >
                   <Icon className="w-4 h-4" />
                 </motion.a>

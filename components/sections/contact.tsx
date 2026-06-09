@@ -110,7 +110,7 @@ export function Contact() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors text-text-primary placeholder-text-secondary/40 font-sans"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors text-text-primary placeholder-text-secondary/60 font-sans"
                   placeholder="Your Name  "
                 />
               </div>
@@ -125,7 +125,7 @@ export function Contact() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors text-text-primary placeholder-text-secondary/40 font-sans"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors text-text-primary placeholder-text-secondary/60 font-sans"
                   placeholder="your@email.com"
                 />
               </div>
@@ -141,7 +141,7 @@ export function Contact() {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors resize-none text-text-primary placeholder-text-secondary/40 font-sans"
+                className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-[#F6F3EB] border border-khaki/30 focus:border-accent focus:outline-none transition-colors resize-none text-text-primary placeholder-text-secondary/60 font-sans"
                 placeholder="Hi! Let's collaborate..."
               />
             </div>
