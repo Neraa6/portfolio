@@ -81,9 +81,9 @@ export function Navbar() {
           {/* Socials (Desktop) */}
           <div className="hidden sm:flex items-center gap-1.5">
             {[
-              { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
-              { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
-            ].map(({ icon: Icon, href, label }) => (
+              { icon: Github, href: "https://github.com/Neraa6" },
+              { icon: Instagram, href: "https://www.instagram.com/yrgnn/" },
+            ].map(({ icon: Icon, href }) => (
               <motion.a
                 key={href}
                 href={href}
@@ -139,9 +139,9 @@ export function Navbar() {
             ))}
             <div className="flex gap-2 pt-3 border-t border-khaki/20">
               {[
-                { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
-                { icon: Instagram, href: "https://www.instagram.com/y.regan6/", label: "Instagram" },
-              ].map(({ icon: Icon, href, label }) => (
+                { icon: Github, href: "https://github.com/Neraa6" },
+                { icon: Instagram, href: "https://www.instagram.com/yrgnn/" },
+              ].map(({ icon: Icon, href }) => (
                 <motion.a
                   key={href}
                   href={href}
