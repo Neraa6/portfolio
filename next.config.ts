@@ -11,11 +11,6 @@ const nextConfig = {
       },
     ],
   },
-  // Opsional: aktifkan jika pakai Turbopack
-  experimental: {
-    turbo: {},
-  },
- 
 };
 
 module.exports = nextConfig;

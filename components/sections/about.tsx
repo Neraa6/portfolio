@@ -14,20 +14,38 @@ export function About() {
     <div className="w-full space-y-12">
       {/* Title */}
       <div className="space-y-2">
-        <p className="text-xs font-mono tracking-widest text-accent uppercase font-bold">Biography</p>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-accent-secondary">About Me</h2>
+        <p className="text-xs font-mono tracking-widest text-accent uppercase font-bold">
+          Biography
+        </p>
+
+        <h2 className="text-3xl md:text-5xl font-extrabold text-accent-secondary">
+          About Me
+        </h2>
       </div>
 
       {/* Grid Content */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-        {/* Left Side: Profile Photo (5 cols) */}
-        <div className="md:col-span-5 flex justify-center"> <div className="relative aspect-[3/4] w-full max-w-[320px] rounded-3xl overflow-hidden border border-khaki bg-[#FAF8F5] p-3 shadow-sm group"> <div className="relative w-full h-full rounded-2xl overflow-hidden"> <Image src="/images.JPG" alt="Yusuf Regan Manggala Ghalib" fill sizes="(max-w-768px) 100vw, 30vw" /> </div>
-          {/* Absolute overlay badge */}
-          <div className="absolute top-6 left-6 bg-secondary/80 border border-khaki/30 px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] text-text-primary font-mono backdrop-blur-sm">
-            <User className="w-3.5 h-3.5 text-accent" />
-            <span>Yusuf Regan</span>
+        {/* Left Side: Profile Photo */}
+        <div className="md:col-span-5 flex justify-center">
+          <div className="relative aspect-[2/3] w-full max-w-[320px] rounded-3xl overflow-hidden border border-khaki bg-[#FAF8F5] p-3 shadow-sm group">
+            {/* Image */}
+            <div className="relative w-full h-full rounded-2xl overflow-hidden">
+              <Image
+                src="/images.JPG"
+                alt="Yusuf Regan Manggala Ghalib"
+                fill
+                sizes="(max-width: 768px) 100vw, 30vw"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                priority
+              />
+            </div>
+
+            {/* Absolute overlay badge */}
+            <div className="absolute top-6 left-6 bg-secondary/80 border border-khaki/30 px-3 py-1 rounded-full flex items-center gap-1.5 text-[10px] text-text-primary font-mono backdrop-blur-sm">
+              <User className="w-3.5 h-3.5 text-accent" />
+              <span>Yusuf Regan</span>
+            </div>
           </div>
-        </div>
         </div>
 
         {/* Right Side: Description & Stats (7 cols) */}
