@@ -100,9 +100,6 @@ export function Hero() {
             <span className="px-3 py-1 bg-[#FF5722] text-white border-2 border-black text-xs font-grotesk font-black tracking-widest uppercase rounded-md shadow-[2px_2px_0px_#000]">
               STAGE 01
             </span>
-            <span className="px-3 py-1 bg-[#2563EB] text-white border-2 border-black text-xs font-grotesk font-black tracking-wider uppercase rounded-md shadow-[2px_2px_0px_#000]">
-              LVL 99 DEVELOPER
-            </span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-grotesk font-black text-black tracking-tight leading-[0.95] uppercase">
