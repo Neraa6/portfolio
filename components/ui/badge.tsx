@@ -1,20 +1,25 @@
 import { cn } from "@/lib/utils";
 
 interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: "default" | "accent" | "outline";
+  variant?: "default" | "accent" | "outline" | "yellow" | "lime" | "pink" | "blue" | "coral";
 }
 
 export function Badge({ className, variant = "default", children, ...props }: BadgeProps) {
   const variants = {
-    default: "bg-secondary text-text-secondary border-white/10",
-    accent: "bg-gradient-to-r from-accent/20 to-accent-secondary/20 text-accent border-accent/30",
-    outline: "border border-white/20 text-text-secondary",
+    default: "bg-white text-black border-2 border-black shadow-[2px_2px_0px_#000000]",
+    accent: "bg-[#FFDE00] text-black border-2 border-black shadow-[2px_2px_0px_#000000]",
+    yellow: "bg-[#FFDE00] text-black border-2 border-black shadow-[2px_2px_0px_#000000]",
+    lime: "bg-[#A3E635] text-black border-2 border-black shadow-[2px_2px_0px_#000000]",
+    pink: "bg-[#FF007A] text-white border-2 border-black shadow-[2px_2px_0px_#000000]",
+    blue: "bg-[#2563EB] text-white border-2 border-black shadow-[2px_2px_0px_#000000]",
+    coral: "bg-[#FF5722] text-white border-2 border-black shadow-[2px_2px_0px_#000000]",
+    outline: "bg-transparent text-black border-2 border-black shadow-[2px_2px_0px_#000000]",
   };
 
   return (
     <span
       className={cn(
-        "inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border",
+        "inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-mono font-extrabold uppercase tracking-wider select-none",
         variants[variant],
         className
       )}

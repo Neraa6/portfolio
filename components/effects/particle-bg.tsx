@@ -15,6 +15,8 @@ export function ParticleBg() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    const colors = ["#FFDE00", "#A3E635", "#FF5722", "#2563EB", "#FF007A", "#000000"];
+
     const particles: Array<{
       x: number;
       y: number;
@@ -22,22 +24,24 @@ export function ParticleBg() {
       speedX: number;
       speedY: number;
       opacity: number;
+      color: string;
     }> = [];
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 35; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 0.5,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
-        opacity: Math.random() * 0.5 + 0.2,
+        size: Math.floor(Math.random() * 6) + 4,
+        speedX: (Math.random() - 0.5) * 0.35,
+        speedY: (Math.random() - 0.5) * 0.35,
+        opacity: Math.random() * 0.3 + 0.1,
+        color: colors[Math.floor(Math.random() * colors.length)],
       });
     }
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       particles.forEach((p) => {
         p.x += p.speedX;
         p.y += p.speedY;
@@ -45,29 +49,16 @@ export function ParticleBg() {
         if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
         if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(79, 98, 74, ${p.opacity * 0.4})`; // more subtle
-        ctx.fill();
+        // Draw crisp Neo-Brutalist Geometric Square
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fillRect(Math.floor(p.x), Math.floor(p.y), p.size, p.size);
+        ctx.strokeStyle = "#000000";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(Math.floor(p.x), Math.floor(p.y), p.size, p.size);
       });
 
-      // Connect nearby particles
-      particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach((p2) => {
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 150) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(79, 98, 74, ${0.05 * (1 - distance / 150)})`; // more subtle
-            ctx.stroke();
-          }
-        });
-      });
-
+      ctx.globalAlpha = 1;
       requestAnimationFrame(animate);
     };
 
@@ -85,7 +76,7 @@ export function ParticleBg() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
     />
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Space_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Mono, Space_Grotesk } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
@@ -11,6 +11,13 @@ import "./globals.css";
 const sans = Plus_Jakarta_Sans({ 
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const grotesk = Space_Grotesk({
+  weight: ["500", "700"],
+  subsets: ["latin"],
+  variable: "--font-grotesk",
   display: "swap",
 });
 
@@ -27,7 +34,7 @@ export const metadata: Metadata = getSEOTags({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#F6F3EB",
+  themeColor: "#FAF7F2",
   width: "device-width",
   initialScale: 1,
 };
@@ -38,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable} scroll-smooth`}>
-      <body className="antialiased bg-background text-text-primary min-h-screen">
+    <html lang="en" className={`${sans.variable} ${grotesk.variable} ${mono.variable} scroll-smooth`}>
+      <body className="antialiased bg-[#FAF7F2] text-black min-h-screen selection:bg-[#FFDE00] selection:text-black">
         <ScrollProgress />
         <CustomCursor />
         

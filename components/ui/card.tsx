@@ -4,22 +4,19 @@ import { motion, HTMLMotionProps } from "framer-motion";
 interface CardProps extends HTMLMotionProps<"div"> {
   children: React.ReactNode;
   hover?: boolean;
-  glow?: boolean;
 }
 
 export function Card({ 
   className, 
   children, 
   hover = true,
-  glow = false,
   ...props 
 }: CardProps) {
   return (
     <motion.div
-      whileHover={hover ? { y: -4, transition: { duration: 0.2 } } : undefined}
+      whileHover={hover ? { x: -3, y: -3, transition: { duration: 0.15, ease: "easeOut" } } : undefined}
       className={cn(
-        "glass-card p-6",
-        glow && "hover:shadow-glow hover:border-accent/40",
+        "bg-white border-[3px] border-black shadow-[6px_6px_0px_0px_#000000] rounded-xl p-6 transition-shadow duration-150 hover:shadow-[9px_9px_0px_0px_#000000]",
         className
       )}
       {...props}
