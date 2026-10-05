@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Space_Mono, Space_Grotesk } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Mono, Space_Grotesk, Caveat } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
@@ -28,6 +28,13 @@ const mono = Space_Mono({
   display: "swap",
 });
 
+const handwriting = Caveat({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-handwriting",
+  display: "swap",
+});
+
 export const metadata: Metadata = getSEOTags({
   title: "Yusuf Regan | Full Stack Developer Portfolio",
   description: "IT Student & Junior Full Stack Developer specializing in modern web applications, backend systems, and IoT solutions.",
@@ -45,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${grotesk.variable} ${mono.variable} scroll-smooth`}>
-      <body className="antialiased bg-[#FAF7F2] text-black min-h-screen selection:bg-[#FFDE00] selection:text-black">
+    <html lang="en" className={`${sans.variable} ${grotesk.variable} ${mono.variable} ${handwriting.variable} scroll-smooth`}>
+      <body className="antialiased bg-[#FAF7F2] text-[#111111] min-h-screen selection:bg-[#D8FF45] selection:text-black">
         <ScrollProgress />
         <CustomCursor />
         

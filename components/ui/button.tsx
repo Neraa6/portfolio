@@ -7,7 +7,7 @@ import { playRetroBeep, playRetroSelect } from "@/lib/retro-audio";
 import React from "react";
 
 export interface ButtonProps {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "coral" | "teal" | "lime" | "pink";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "coral" | "teal" | "lime" | "yellow" | "orange" | "pink" | "default";
   size?: "sm" | "md" | "lg";
   loading?: boolean;
   disabled?: boolean;
@@ -42,18 +42,21 @@ export function Button({
   ariaLabel,
 }: ButtonProps) {
   const variants = {
-    primary: "bg-[#FFDE00] text-black border-[3px] border-black shadow-[4px_4px_0px_#000000] hover:bg-[#FACC15] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#000000]",
-    coral: "bg-[#FF5722] text-white border-[3px] border-black shadow-[4px_4px_0px_#000000] hover:bg-[#F4511E] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#000000]",
-    secondary: "bg-white text-black border-[3px] border-black shadow-[4px_4px_0px_#000000] hover:bg-[#FAF7F2] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#000000]",
-    teal: "bg-[#2563EB] text-white border-[3px] border-black shadow-[4px_4px_0px_#000000] hover:bg-[#1D4ED8] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#000000]",
-    lime: "bg-[#A3E635] text-black border-[3px] border-black shadow-[4px_4px_0px_#000000] hover:bg-[#84CC16] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#000000]",
-    pink: "bg-[#FF007A] text-white border-[3px] border-black shadow-[4px_4px_0px_#000000] hover:bg-[#E0006B] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#000000]",
-    outline: "bg-transparent text-black border-[3px] border-black shadow-[4px_4px_0px_#000000] hover:bg-[#FFDE00]/20 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0px_#000000]",
-    ghost: "bg-transparent text-black hover:bg-black/10 border-2 border-transparent",
+    default: "bg-[#111111] text-white border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#D8FF45] hover:text-[#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    primary: "bg-[#111111] text-white border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#D8FF45] hover:text-[#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    yellow: "bg-[#FFE17D] text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    lime: "bg-[#D8FF45] text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    orange: "bg-[#FFADAD] text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    coral: "bg-[#FFADAD] text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    secondary: "bg-[#FAF7F2] text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#A0C4FF] hover:text-[#111111] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    teal: "bg-[#A0C4FF] text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    pink: "bg-[#FFC6FF] text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    outline: "bg-transparent text-[#111111] border-[2.5px] border-[#111111] shadow-[4px_4px_0px_#111111] hover:bg-[#111111] hover:text-white active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_#111111]",
+    ghost: "bg-transparent text-[#111111] hover:bg-[#D8FF45] hover:text-[#111111] border-2 border-[#111111] shadow-[2px_2px_0px_#111111]",
   };
 
   const sizes = {
-    sm: "px-3.5 py-1.5 text-xs font-mono font-extrabold tracking-wider",
+    sm: "px-3.5 py-1.5 text-xs font-mono font-bold tracking-wider",
     md: "px-5 py-2.5 text-sm font-grotesk font-black tracking-wider",
     lg: "px-7 py-3.5 text-base font-grotesk font-black tracking-wider",
   };
@@ -76,7 +79,7 @@ export function Button({
   };
 
   const combinedClasses = cn(
-    "relative rounded-lg transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 select-none uppercase interactive cursor-pointer z-10",
+    "relative rounded-none transition-all duration-100 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 select-none uppercase interactive cursor-pointer z-10",
     variants[variant],
     sizes[size],
     className
@@ -89,6 +92,8 @@ export function Button({
         download={download}
         target={target}
         rel={rel}
+        whileHover={{ x: -2, y: -2 }}
+        whileTap={{ x: 2, y: 2 }}
         className={combinedClasses}
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
@@ -104,6 +109,8 @@ export function Button({
   return (
     <motion.button
       type={type}
+      whileHover={{ x: -2, y: -2 }}
+      whileTap={{ x: 2, y: 2 }}
       className={combinedClasses}
       disabled={disabled || loading}
       onClick={handleClick}

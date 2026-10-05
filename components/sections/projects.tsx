@@ -1,111 +1,126 @@
 "use client";
 
-import { Github, Play, Star, Terminal, CheckCircle2 } from "lucide-react";
+import { Github, Play, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { playRetroBeep, playRetroSelect } from "@/lib/retro-audio";
+import { playRetroBeep } from "@/lib/retro-audio";
+import { UnderlineScribble } from "@/components/ui/handwritten-doodles";
 
 const projects = [
   {
     id: "todo-app",
     stage: "STAGE 01",
+    stageColor: "bg-[#FFE17D] text-[#111111]",
     title: "Todo Task App",
     description: "A sleek task management app with real-time updates, drag and drop UI built using Next.js and TailwindCSS.",
     tech: ["Next.js", "TailwindCSS"],
     features: ["Real-time Sync", "Drag & Drop UI"],
     github: "https://github.com/Neraa6/todo-list",
     demo: "#",
-    stageBg: "bg-[#FF5722]",
+    annotation: "★ drag & drop real-time",
   },
   {
     id: "ecommerce",
     stage: "STAGE 02",
+    stageColor: "bg-[#D8FF45] text-[#111111]",
     title: "Mini E-Commerce",
     description: "A compact e-commerce platform with product management, shopping cart, and a clean UI built using TailwindCSS.",
     tech: ["React", "TailwindCSS"],
     features: ["User Authentication", "Product Management"],
     github: "https://github.com/Neraa6",
     demo: "#",
-    stageBg: "bg-[#2563EB]",
+    annotation: "★ cart & auth system",
   },
   {
     id: "catering",
     stage: "STAGE 03",
+    stageColor: "bg-[#FFADAD] text-[#111111]",
     title: "Catering Online Platform",
     description: "Modern food ordering platform featuring direct cart checkout, order trackers, multi-merchant analytics, and Supabase integration.",
     tech: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
     features: ["Cart & Checkout", "Dashboard Analytics", "Database Sync"],
     github: "https://github.com/Neraa6/catering",
     demo: "#",
-    stageBg: "bg-[#FFDE00] text-black",
+    annotation: "★ full stack food platform",
   },
   {
     id: "iot-dashboard",
     stage: "STAGE 04",
+    stageColor: "bg-[#A0C4FF] text-[#111111]",
     title: "IoT Control Dashboard",
     description: "Interactive dashboard for monitoring and controlling IoT devices, featuring real-time data visualization and automated MQTT alerts.",
     tech: ["Laravel", "MQTT", "shiftr.io"],
     features: ["Real-time Monitoring", "Device Control", "Alert Notifications"],
     github: "https://github.com/Neraa6/iot-dashboard",
     demo: "#",
-    stageBg: "bg-[#A3E635] text-black",
+    annotation: "★ real-time hardware MQTT",
   },
 ];
 
 export function Projects() {
   return (
-    <div className="w-full space-y-8">
-      {/* Title Header */}
-      <div className="space-y-2 text-left">
-        <div className="inline-block px-3.5 py-1 bg-[#2563EB] text-white text-xs font-grotesk font-black uppercase rounded-md border-2 border-black shadow-[2px_2px_0px_#000]">
-          MISSION LOG
+    <div className="w-full space-y-12 text-left">
+      {/* Editorial Title Header */}
+      <div className="space-y-2 relative">
+        <div className="inline-block px-3.5 py-1 bg-[#FFC6FF] text-[#111111] text-xs font-mono font-black uppercase border border-[#111111] shadow-sm">
+          MISSION LOG // 03
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-grotesk font-black text-black tracking-tight uppercase">
-          STAGE SELECT
-        </h2>
+        
+        <div className="flex flex-wrap items-baseline gap-4">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-grotesk font-black text-[#111111] tracking-tight uppercase">
+            STAGE SELECT
+          </h2>
+          <span className="font-handwriting text-2xl text-[#111111] font-bold rotate-1 bg-[#FFE17D] px-3 py-0.5 border border-[#111111] shadow-sm hidden sm:inline-block">
+            * editorial case studies
+          </span>
+        </div>
+        <UnderlineScribble className="w-44 h-4 text-[#111111]" />
       </div>
 
-      {/* Grid of Stage Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Editorial Case Study Grid (Clean Unboxed Layout) */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
         {projects.map((proj) => (
           <div
             key={proj.id}
             onMouseEnter={() => playRetroBeep(540, 0.04)}
-            className="bg-white border-[3px] border-black shadow-[6px_6px_0px_0px_#000000] p-6 sm:p-7 rounded-2xl flex flex-col justify-between hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0px_0px_#000000] transition-all text-left gap-5 group relative"
+            className="bg-transparent flex flex-col justify-between text-left gap-6 group relative border-t border-[#111111]/20 pt-6"
           >
-            {/* Top Side: Header & Stage */}
-            <div className="space-y-3.5">
-              <div className="flex items-center justify-between border-b-2 border-black pb-3">
-                <div className="flex items-center gap-2">
-                  <span className={`px-2.5 py-0.5 ${proj.stageBg || "bg-[#FF5722] text-white"} text-[10px] font-mono font-extrabold rounded-md border-2 border-black shadow-[2px_2px_0px_#000]`}>
-                    {proj.stage}
-                  </span>
-                  <h3 className="text-base sm:text-lg font-grotesk font-black text-black uppercase">
-                    {proj.title}
-                  </h3>
-                </div>
-              </div>
+            {/* Top Sticker Annotation */}
+            <div className="flex items-center justify-between">
+              <span className={`px-2.5 py-1 ${proj.stageColor} text-[10px] font-mono font-black border border-[#111111] shadow-sm`}>
+                {proj.stage}
+              </span>
+              <span className="font-handwriting text-base font-bold text-[#111111] bg-[#FFF9D2] px-3 py-0.5 border border-[#111111] shadow-sm -rotate-1">
+                {proj.annotation}
+              </span>
+            </div>
 
-              <p className="text-sm text-zinc-800 leading-relaxed font-sans font-medium">
+            {/* Main Content */}
+            <div className="space-y-4">
+              <h3 className="text-2xl sm:text-3xl font-grotesk font-black text-[#111111] uppercase tracking-tight">
+                {proj.title}
+              </h3>
+
+              <p className="text-base text-[#111111] leading-relaxed font-sans font-medium">
                 {proj.description}
               </p>
 
               {/* Tech Badges */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
+              <div className="flex flex-wrap gap-2 pt-1">
                 {proj.tech.map((t) => (
                   <span
                     key={t}
-                    className="px-2.5 py-0.5 rounded-md bg-[#FFDE00] border-2 border-black text-[11px] font-mono font-extrabold text-black shadow-[2px_2px_0px_#000]"
+                    className="px-2.5 py-1 rounded-none bg-white border border-[#111111] text-[11px] font-mono font-bold text-[#111111] shadow-sm"
                   >
-                    #{t}
+                    [ #{t} ]
                   </span>
                 ))}
               </div>
 
-              {/* Bullet features */}
-              <ul className="space-y-1.5 pt-1">
+              {/* Bullet Features Paper Block */}
+              <ul className="space-y-2 pt-1 bg-white p-3.5 border border-[#111111] shadow-sm">
                 {proj.features.map((feat, i) => (
-                  <li key={i} className="text-xs font-mono font-bold text-black flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#A3E635] shrink-0 fill-black" />
+                  <li key={i} className="text-xs font-mono font-bold text-[#111111] flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#111111] shrink-0 stroke-[2.5]" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -113,7 +128,7 @@ export function Projects() {
             </div>
 
             {/* Bottom Actions */}
-            <div className="flex gap-3 pt-3 border-t-2 border-black/20">
+            <div className="flex gap-3 pt-2">
               <Button
                 href={proj.github}
                 target="_blank"
@@ -130,7 +145,7 @@ export function Projects() {
                   href={proj.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  variant="coral"
+                  variant="lime"
                   size="sm"
                   className="flex-1"
                 >

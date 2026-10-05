@@ -11,19 +11,19 @@ interface ProgressProps {
 
 export function Progress({ value, className, color = "gradient" }: ProgressProps) {
   const colors = {
-    blue: "bg-accent",
-    purple: "bg-accent-secondary",
-    gradient: "bg-gradient-to-r from-accent to-accent-secondary",
+    blue: "bg-black",
+    purple: "bg-black",
+    gradient: "bg-black",
   };
 
   return (
-    <div className={cn("h-2 bg-secondary rounded-full overflow-hidden", className)}>
+    <div className={cn("h-3 bg-[#F2F2F2] border-2 border-black rounded-none overflow-hidden", className)}>
       <motion.div
         initial={{ width: 0 }}
         whileInView={{ width: `${value}%` }}
         viewport={{ once: true }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className={cn("h-full rounded-full", colors[color])}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className={cn("h-full rounded-none", colors[color])}
       />
     </div>
   );

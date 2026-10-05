@@ -15,7 +15,7 @@ export function ParticleBg() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const colors = ["#FFDE00", "#A3E635", "#FF5722", "#2563EB", "#FF007A", "#000000"];
+    const colors = ["#000000", "#555555", "#888888"];
 
     const particles: Array<{
       x: number;
@@ -27,14 +27,14 @@ export function ParticleBg() {
       color: string;
     }> = [];
 
-    for (let i = 0; i < 35; i++) {
+    for (let i = 0; i < 25; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.floor(Math.random() * 6) + 4,
-        speedX: (Math.random() - 0.5) * 0.35,
-        speedY: (Math.random() - 0.5) * 0.35,
-        opacity: Math.random() * 0.3 + 0.1,
+        size: Math.floor(Math.random() * 4) + 3,
+        speedX: (Math.random() - 0.5) * 0.25,
+        speedY: (Math.random() - 0.5) * 0.25,
+        opacity: Math.random() * 0.25 + 0.1,
         color: colors[Math.floor(Math.random() * colors.length)],
       });
     }
@@ -49,13 +49,10 @@ export function ParticleBg() {
         if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
         if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
 
-        // Draw crisp Neo-Brutalist Geometric Square
+        // Draw stark Brutalist Canvas Square
         ctx.fillStyle = p.color;
         ctx.globalAlpha = p.opacity;
         ctx.fillRect(Math.floor(p.x), Math.floor(p.y), p.size, p.size);
-        ctx.strokeStyle = "#000000";
-        ctx.lineWidth = 1;
-        ctx.strokeRect(Math.floor(p.x), Math.floor(p.y), p.size, p.size);
       });
 
       ctx.globalAlpha = 1;

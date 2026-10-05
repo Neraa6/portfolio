@@ -2,17 +2,17 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Instagram, Volume2, VolumeX, Gamepad2 } from "lucide-react";
+import { Menu, X, Github, Instagram, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { playRetroBeep, playRetroSelect, toggleAudioMute, isAudioMuted } from "@/lib/retro-audio";
 
 const navLinks = [
   { name: "START", href: "#home" },
-  { name: "STATS", href: "#about" },
-  { name: "INVENTORY", href: "#skills" },
-  { name: "MISSIONS", href: "#projects" },
-  { name: "QUESTS", href: "#experience" },
-  { name: "CONSOLE", href: "#contact" },
+  { name: "ABOUT ME", href: "#about" },
+  { name: "SKILLS", href: "#skills" },
+  { name: "PROJECTS", href: "#projects" },
+  { name: "EXPERIENCE", href: "#experience" },
+  { name: "CONTACT", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -46,18 +46,18 @@ export function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
+      initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200 px-3 py-3 flex justify-center",
-        scrolled ? "mt-1" : "mt-2"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-200 px-4 sm:px-8 py-4 flex justify-center",
+        scrolled ? "bg-[#FAF7F2]/90 backdrop-blur-md border-b border-[#111111]/10 shadow-sm py-3" : "bg-transparent"
       )}
     >
-      {/* Neo-Brutalist HUD Container */}
-      <div className="w-full max-w-5xl bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000000] rounded-xl px-4 py-2.5 flex items-center justify-between">
+      {/* Clean Unboxed Editorial Navigation */}
+      <div className="w-full max-w-6xl flex items-center justify-between">
         
-        {/* Logo / Player 1 Badge */}
+        {/* Brand Label */}
         <motion.a
           href="#home"
           onClick={(e) => {
@@ -65,30 +65,18 @@ export function Navbar() {
             scrollToSection("#home");
           }}
           onMouseEnter={() => playRetroBeep(440, 0.05)}
-          className="flex items-center gap-2.5 group interactive select-none"
+          className="flex items-center gap-2 group interactive cursor-pointer select-none"
         >
-          <div className="p-1.5 bg-[#FFDE00] border-2 border-black rounded-lg text-black group-hover:bg-[#FF5722] group-hover:text-white transition-colors shadow-[2px_2px_0px_#000]">
-            <Gamepad2 className="w-4 h-4" />
-          </div>
-          
-          <div className="flex flex-col text-left">
-            <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#A3E635] border border-black animate-pulse" />
-              <span className="text-xs font-grotesk font-black text-black tracking-wider uppercase">P1: REGAN</span>
-            </div>
-            {/* HP mini bar */}
-            <div className="flex items-center gap-1 text-[9px] font-mono text-zinc-800">
-              <span className="font-extrabold text-black">HP</span>
-              <div className="w-12 h-2.5 bg-[#FAF7F2] border border-black rounded-sm overflow-hidden p-0.5">
-                <div className="w-full h-full bg-[#A3E635]" />
-              </div>
-              <span className="text-[8px] font-extrabold">100%</span>
-            </div>
-          </div>
+          <span className="px-2 py-0.5 bg-[#D8FF45] border border-[#111111] text-[#111111] font-mono text-[10px] font-black uppercase tracking-wider">
+            ISSUE N°01
+          </span>
+          <span className="text-xs font-mono font-black text-[#111111] tracking-widest uppercase">
+            YUSUF REGAN <span className="font-handwriting text-base text-[#111111]/60 font-bold lowercase tracking-normal">· portfolio</span>
+          </span>
         </motion.a>
 
-        {/* Center Desktop Links */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* Center Minimal Typography Links */}
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -98,24 +86,23 @@ export function Navbar() {
                 scrollToSection(link.href);
               }}
               onMouseEnter={() => playRetroBeep(580, 0.03)}
-              className="px-3 py-1.5 rounded-lg text-xs font-grotesk font-black text-black hover:bg-[#FFDE00] border-2 border-transparent hover:border-black transition-all hover:shadow-[2px_2px_0px_#000] interactive uppercase tracking-wider"
+              className="px-3 py-1 text-xs font-mono font-bold text-[#111111] hover:bg-[#D8FF45] border border-transparent hover:border-[#111111] transition-all uppercase tracking-wider cursor-pointer"
             >
-              {link.name}
+              [ {link.name} ]
             </a>
           ))}
         </div>
 
-        {/* Audio Toggle & Socials */}
+        {/* Audio Switch & Social Links */}
         <div className="flex items-center gap-2">
-          {/* Audio SFX Switch */}
           <button
             onClick={handleMuteToggle}
             type="button"
-            className="p-2 bg-white border-2 border-black shadow-[2px_2px_0px_#000] rounded-lg text-black hover:bg-[#FFDE00] transition-all interactive cursor-pointer"
+            className="p-1.5 bg-[#FFE17D] border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-[#FFE17D] transition-colors interactive cursor-pointer"
             title={muted ? "Unmute Sound FX" : "Mute Sound FX"}
             aria-label="Toggle Sound Effects"
           >
-            {muted ? <VolumeX className="w-4 h-4 text-black" /> : <Volume2 className="w-4 h-4 text-black" />}
+            {muted ? <VolumeX className="w-3.5 h-3.5 stroke-[2.5]" /> : <Volume2 className="w-3.5 h-3.5 stroke-[2.5]" />}
           </button>
 
           {/* Socials (Desktop) */}
@@ -130,17 +117,17 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={() => playRetroBeep(660, 0.03)}
-                className="p-2 bg-white border-2 border-black shadow-[2px_2px_0px_#000] rounded-lg text-black hover:bg-[#2563EB] hover:text-white transition-all interactive"
+                className="p-1.5 bg-white border border-[#111111] text-[#111111] hover:bg-[#FFC6FF] transition-colors interactive cursor-pointer shadow-sm"
                 aria-label={label}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-3.5 h-3.5 stroke-[2.5]" />
               </a>
             ))}
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Drawer Trigger */}
           <button
-            className="md:hidden p-2 bg-[#FFDE00] border-2 border-black text-black shadow-[2px_2px_0px_#000] rounded-lg interactive cursor-pointer"
+            className="md:hidden p-1.5 bg-[#111111] border border-[#111111] text-white interactive cursor-pointer hover:bg-[#D8FF45] hover:text-[#111111]"
             onClick={() => {
               playRetroSelect();
               setIsOpen(!isOpen);
@@ -149,23 +136,23 @@ export function Navbar() {
             aria-label="Toggle navigation menu"
             aria-expanded={isOpen}
           >
-            {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {isOpen ? <X className="w-4 h-4 stroke-[3]" /> : <Menu className="w-4 h-4 stroke-[3]" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer (Neo-Brutalist Menu) */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-16 left-3 right-3 bg-white border-[3px] border-black shadow-[6px_6px_0px_#000] rounded-xl p-4 flex flex-col gap-2 md:hidden z-50"
+            className="absolute top-16 left-4 right-4 bg-[#FAF7F2] border border-[#111111] shadow-lg p-4 flex flex-col gap-2 md:hidden z-50 font-mono"
           >
-            <div className="text-[10px] font-mono text-black font-extrabold uppercase border-b-2 border-black pb-1.5 flex items-center justify-between">
-              <span>[ NAVIGATION MENU ]</span>
-              <span className="px-1.5 py-0.5 bg-[#FFDE00] border border-black text-[9px]">P1 CONTROL</span>
+            <div className="text-xs font-mono text-[#111111] font-bold uppercase border-b border-[#111111]/20 pb-2 flex items-center justify-between">
+              <span className="bg-[#D8FF45] px-2 py-0.5 border border-[#111111]">[ EDITORIAL MENU ]</span>
+              <span className="px-2 py-0.5 bg-[#111111] text-white text-[10px]">SYS_NAV</span>
             </div>
             {navLinks.map((link) => (
               <a
@@ -175,13 +162,13 @@ export function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="px-3 py-2 rounded-lg bg-[#FAF7F2] border-2 border-black text-xs font-grotesk font-black text-black hover:bg-[#FFDE00] transition-colors text-left flex items-center justify-between shadow-[2px_2px_0px_#000]"
+                className="px-3 py-2 bg-white border border-[#111111] text-xs font-mono font-bold text-[#111111] hover:bg-[#A0C4FF] transition-colors text-left flex items-center justify-between shadow-sm"
               >
-                <span>{link.name}</span>
-                <span className="text-[10px] font-black">▶</span>
+                <span>[ {link.name} ]</span>
+                <span className="text-xs font-black">→</span>
               </a>
             ))}
-            <div className="flex gap-2 pt-2 border-t-2 border-black">
+            <div className="flex gap-2 pt-2 border-t border-[#111111]/20">
               {[
                 { icon: Github, href: "https://github.com/Neraa6", label: "GitHub" },
                 { icon: Instagram, href: "https://www.instagram.com/yrgnn/", label: "Instagram" },
@@ -191,10 +178,10 @@ export function Navbar() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 bg-[#FAF7F2] border-2 border-black text-black hover:bg-[#FF5722] hover:text-white transition-all flex-1 flex justify-center rounded-lg font-mono text-xs shadow-[2px_2px_0px_#000]"
+                  className="p-2 bg-[#FFE17D] border border-[#111111] text-[#111111] hover:bg-[#111111] hover:text-white transition-colors flex-1 flex justify-center font-mono text-xs shadow-sm"
                   aria-label={label}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4 stroke-[2.5]" />
                 </a>
               ))}
             </div>

@@ -10,7 +10,7 @@ export function CustomCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { stiffness: 500, damping: 28 };
+  const springConfig = { stiffness: 600, damping: 30 };
   const ringX = useSpring(cursorX, springConfig);
   const ringY = useSpring(cursorY, springConfig);
 
@@ -55,9 +55,9 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* Neo-Brutalist Center Cursor Box */}
+      {/* Custom Editorial Center Square Cursor */}
       <motion.div
-        className="custom-cursor-neo hidden md:block"
+        className="custom-cursor-brutal hidden md:block"
         style={{
           x: cursorX,
           y: cursorY,
@@ -66,15 +66,14 @@ export function CustomCursor() {
         }}
         animate={{
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? "#FF007A" : "#FFDE00",
-          rotate: isHovering ? 45 : 0,
+          backgroundColor: isHovering ? "#A0C4FF" : "#D8FF45",
         }}
-        transition={{ type: "spring", stiffness: 600, damping: 22 }}
+        transition={{ duration: 0.05 }}
       />
 
-      {/* Neo-Brutalist Outer Ring / Shadow Box */}
+      {/* Custom Editorial Outer Frame */}
       <motion.div
-        className="custom-cursor-neo-ring hidden md:block"
+        className="custom-cursor-brutal-ring hidden md:block"
         style={{
           x: ringX,
           y: ringY,
@@ -82,11 +81,10 @@ export function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isHovering ? 1.4 : 1,
-          borderColor: isHovering ? "#FF007A" : "#000000",
-          rotate: isHovering ? 90 : 0,
+          scale: isHovering ? 1.3 : 1,
+          borderColor: isHovering ? "#A0C4FF" : "#111111",
         }}
-        transition={{ type: "spring", stiffness: 350, damping: 25 }}
+        transition={{ duration: 0.08 }}
       />
     </>
   );

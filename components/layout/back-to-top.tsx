@@ -31,14 +31,14 @@ export function BackToTop() {
           className="fixed bottom-6 right-6 z-40"
         >
           <Button
-            variant="coral"
+            variant="yellow"
             size="sm"
-            className="w-12 h-12 p-0 rounded-xl flex items-center justify-center border-[3px] border-black shadow-[4px_4px_0px_#000]"
+            className="w-12 h-12 p-0 rounded-none bg-[#FFE600] text-black hover:bg-black hover:text-white flex items-center justify-center border-[3px] border-black shadow-[4px_4px_0px_#000] transition-all"
             onClick={handleScrollTop}
             aria-label="Warp back to top"
             title="Warp to Top"
           >
-            <ArrowUp className="w-5 h-5 text-white stroke-[3]" />
+            <ArrowUp className="w-5 h-5 stroke-[3]" />
           </Button>
         </motion.div>
       )}
