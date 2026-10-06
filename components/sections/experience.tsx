@@ -7,15 +7,15 @@ import { UnderlineScribble } from "@/components/ui/handwritten-doodles";
 const experiences = [
   {
     checkpoint: "CHECKPOINT 01",
-    checkpointColor: "bg-[#FFE17D] text-[#111111]",
-    flagColor: "bg-[#FFE17D] text-[#111111]",
-    type: "Education",
-    icon: GraduationCap,
-    title: "IT Student - Vocational High School",
-    organization: "SMK TI BAZMA",
-    period: "2023 - Present",
-    description: "Specializing in Full Stack Software Development, Database Management, and Networking administration guidelines.",
-    annotation: "★ vocational IT foundation",
+    checkpointColor: "bg-[#FFADAD] text-[#111111]",
+    flagColor: "bg-[#FFADAD] text-[#111111]",
+    type: "Internship",
+    icon: Briefcase,
+    title: "IT Staff Intern",
+    organization: "PT Pertamina Geothermal Energy Tbk",
+    period: "Agustus 2026 - Present",
+    description: "Prepared and annotated image datasets to support AI model training, focusing on accurate and consistent data labeling.",
+    annotation: "★ enterprise IT experience",
   },
   {
     checkpoint: "CHECKPOINT 02",
@@ -31,16 +31,17 @@ const experiences = [
   },
   {
     checkpoint: "CHECKPOINT 03",
-    checkpointColor: "bg-[#FFADAD] text-[#111111]",
-    flagColor: "bg-[#FFADAD] text-[#111111]",
-    type: "Internship",
-    icon: Briefcase,
-    title: "IT Staff Intern",
-    organization: "PT Pertamina Geothermal Energy Tbk",
-    period: "Agustus 2026 - Present",
-    description: "IT support, system maintenance, software testing, and network administration assistant.",
-    annotation: "★ enterprise IT experience",
+    checkpointColor: "bg-[#FFE17D] text-[#111111]",
+    flagColor: "bg-[#FFE17D] text-[#111111]",
+    type: "Education",
+    icon: GraduationCap,
+    title: "IT Student - Vocational High School",
+    organization: "SMK TI BAZMA",
+    period: "2023 - Present",
+    description: "Specializing in Full Stack Software Development, Database Management, and Networking administration guidelines.",
+    annotation: "★ vocational IT foundation",
   },
+ 
 ];
 
 export function Experience() {
